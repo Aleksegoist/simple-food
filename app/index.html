@@ -3,10 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="icons/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="icons/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="icons/favicon-16x16.png" />
+    <link rel="manifest" href="icons/site.webmanifest" />
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
     <title>Simple Food</title>
     <link rel="stylesheet" href="css/style.min.css" />
   </head>
   <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <nav class="menu">
+            <a class="logo" href="">
+              <img src="images/logo.svg" alt="логотип Simple Food" />
+            </a>
+            <div class="menu__content">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a class="menu__link menu__link--active" href="#">Головна</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#">Страви</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#">Контакти</a>
+                </li>
+              </ul>
+
+              <ul class="user-nav">
+                <li class="user-nav__item">
+                  <button class="user-nav__search">
+                    <span class="sr-only">Кнопка з іконкою пошуку</span>
+                  </button>
+                </li>
+                <li class="user-nav__item">
+                  <button class="user-nav__cart">
+                    <span class="sr-only">Кнопка з іконкою корзини</span>
+                    <span class="user-nav__num">4</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="hero"></div>
+        </div>
+      </header>
+    </div>
     <script src="js/main.min.js"></script>
   </body>
 </html>
