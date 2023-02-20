@@ -6,6 +6,21 @@ $darkBlue-900: #363853;
 $dark: #31352b;
 $white: #ffffff;
 
+$maxWidth: 1905;
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $addMobSize: $addSize + $addSize * 0.7;
+  @media (max-width: 767px) {
+    font-size: calc(
+      #{$mobSize + px} + #{$addMobSize} * ((100vw - 375px) / #{$maxWidth})
+    );
+  }
+  @media (min-width: 767px) {
+    font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
+  }
+}
+
 %rubik-400 {
   font-family: 'Rubik-Light', sans-serif;
   font-weight: 300;
