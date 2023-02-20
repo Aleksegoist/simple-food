@@ -40,3 +40,16 @@ $maxWidth: 1905;
   font-family: 'Rubik-Medium', sans-serif;
   font-weight: 500;
 }
+
+%mask-icon-btn {
+  background-color: $darkBlue-900;
+  mask-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  left: 32px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transition: background-color 0.3s;
+}
