@@ -1,59 +1,43 @@
-$orange-900: #ff6838;
-$silver-200: #ececec;
-$silver-100: #f9faff;
-$gray: #c2c2c2;
-$darkBlue-900: #363853;
-$dark: #31352b;
-$white: #ffffff;
+// $maxWidth: 1905;
 
-$maxWidth: 1905;
+$lg: 1200;
+$md: 992;
+$sm: 768;
+$xs: 576;
 
-@mixin adaptiv-font($pcSize, $mobSize) {
-  $addSize: $pcSize - $mobSize;
-  $addMobSize: $addSize + $addSize * 0.7;
-  @media (max-width: 767px) {
-    font-size: calc(
-      #{$mobSize + px} + #{$addMobSize} * ((100vw - 375px) / #{$maxWidth})
-    );
-  }
-  @media (min-width: 767px) {
-    font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
-  }
-}
+// %rubik-400 {
+//   font-family: 'Rubik-Light', sans-serif;
+//   font-weight: 300;
+//   font-style: normal;
+// }
 
-%rubik-400 {
-  font-family: 'Rubik-Light', sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
+// %rubik-400 {
+//   font-family: 'Rubik-Regular', sans-serif;
+//   font-weight: 400;
+//   font-style: normal;
+// }
 
-%rubik-400 {
-  font-family: 'Rubik-Regular', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+// %rubikItalic-400 {
+//   font-family: 'Rubik-Italic', sans-serif;
+//   font-weight: 400;
+//   font-style: italic;
+// }
 
-%rubikItalic-400 {
-  font-family: 'Rubik-Italic', sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
+// %rubik-500 {
+//   font-family: 'Rubik-Medium', sans-serif;
+//   font-weight: 500;
+//   font-style: normal;
+// }
 
-%rubik-500 {
-  font-family: 'Rubik-Medium', sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-%mask-icon-btn {
-  background-color: $darkBlue-900;
-  mask-repeat: no-repeat;
-  width: 44px;
-  height: 44px;
-  position: absolute;
-  left: 32px;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  transition: background-color 0.3s;
-}
+// %mask-icon-btn {
+//   background-color: $darkBlue-900;
+//   mask-repeat: no-repeat;
+//   width: 44px;
+//   height: 44px;
+//   position: absolute;
+//   left: 32px;
+//   top: 0;
+//   bottom: 0;
+//   margin: auto;
+//   transition: background-color 0.3s;
+// }

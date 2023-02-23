@@ -6,6 +6,7 @@ const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
 const svgSprite = require('gulp-svg-sprite');
+const ttf2woff2 = require('gulp-ttf2woff2');
 const browserSync = require('browser-sync');
 
 function browsersync() {
@@ -54,6 +55,7 @@ function images() {
     .pipe(dest('dist/images'));
 }
 
+/* ADD: create sprites */
 function svgSprites() {
   return src('app/images/icons/*.svg')
     .pipe(
@@ -66,6 +68,11 @@ function svgSprites() {
       })
     )
     .pipe(dest('app/images'));
+}
+
+/* ADD: convert fonts */
+function convertFonts() {
+  return src('app/fonts/*.ttf').pipe(ttf2woff2()).pipe(dest('app/fonts'));
 }
 
 function build() {
@@ -92,6 +99,7 @@ exports.watching = watching;
 exports.images = images;
 exports.cleanDist = cleanDist;
 exports.svgSprites = svgSprites;
+exports.convertFonts = convertFonts;
 exports.build = series(cleanDist, images, build);
 
 exports.default = parallel(svgSprites, styles, scripts, browsersync, watching);

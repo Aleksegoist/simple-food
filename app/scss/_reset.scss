@@ -1,4 +1,4 @@
-html {
+root {
   box-sizing: border-box;
 }
 
@@ -49,6 +49,7 @@ button {
   outline: 0;
   border: 0;
   appearance: none;
+  cursor: pointer;
 }
 
 label {
@@ -58,4 +59,8 @@ label {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+address {
+  font-style: normal;
 }
