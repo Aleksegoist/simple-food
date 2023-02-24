@@ -5,7 +5,7 @@
   right: 0;
   z-index: 99;
   background-color: $c-white;
-  padding: 60px 0;
+  padding: 55px 0;
   border-bottom: 3px solid transparent;
   transition: padding 0.3s ease-in-out, border-color 0.3s ease-in-out;
 
@@ -17,13 +17,12 @@
   &__nav {
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 42px;
   }
 
   &__actions {
     display: flex;
     align-items: center;
-    gap: 10px;
   }
 
   &__btn {
