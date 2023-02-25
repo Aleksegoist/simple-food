@@ -1,0 +1,83 @@
+.features {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1030px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__picture {
+    width: 440px;
+    height: 585px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__content {
+    max-width: 470px;
+    width: 100%;
+  }
+
+  &__title {
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    line-height: 1.5;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    @include line-clamp(4);
+    @include fz(20, 18);
+  }
+
+  &__list {
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    line-height: 1.5;
+    @include fz(24, 18);
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    &::before {
+      content: '';
+      margin-right: 30px;
+      min-width: 34px;
+      height: 34px;
+      background-color: $c-orange-900;
+      mask-image: url('../images/sprite.svg#icon-timer');
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+    }
+
+    &--delivery {
+      &::before {
+        background-color: #00aaff;
+        mask-image: url('../images/sprite.svg#icon-delivery');
+      }
+    }
+
+    &--restaurant {
+      &::before {
+        background-color: #ff2222;
+        mask-image: url('../images/sprite.svg#icon-restorant');
+      }
+    }
+  }
+
+  &__btn {
+  }
+}
