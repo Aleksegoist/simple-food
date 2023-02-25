@@ -91,44 +91,55 @@
         <section class="popular mb-120">
           <div class="container">
             <h2 class="title">Популярне в категоріях</h2>
+
             <ul class="categories-nav popular__nav">
               <li class="categories-nav__item">
                 <button
                   class="categories-nav__btn icon icon--burger"
+                  data-filter="category-1"
                   type="button">
                   Бургери
                 </button>
               </li>
+
               <li class="categories-nav__item">
                 <button
                   class="categories-nav__btn icon icon--pizza"
+                  data-filter="category-2"
                   type="button">
                   Піца
                 </button>
               </li>
+
               <li class="categories-nav__item">
                 <button
                   class="categories-nav__btn icon icon--sandwich"
+                  data-filter="category-3"
                   type="button">
                   Сендвічі
                 </button>
               </li>
+
               <li class="categories-nav__item">
                 <button
                   class="categories-nav__btn icon icon--asian"
+                  data-filter="category-4"
                   type="button">
                   Азійська кухня
                 </button>
               </li>
+
               <li class="categories-nav__item">
-                <button class="categories-nav__btn icon icon--sets">
+                <button
+                  class="categories-nav__btn icon icon--sets"
+                  data-filter="category-5">
                   Cети
                 </button>
               </li>
             </ul>
 
             <ul class="categories-list popular__list">
-              <li class="categories-list__item">
+              <li class="categories-list__item category-1">
                 <article class="product-card">
                   <a class="product-card__link" href="#">
                     <h3 class="product-card__title">
@@ -151,7 +162,7 @@
                   </button>
                 </article>
               </li>
-              <li class="categories-list__item">
+              <li class="categories-list__item category-1">
                 <article class="product-card">
                   <a class="product-card__link" href="#">
                     <h3 class="product-card__title">Біфбургер</h3>
@@ -172,7 +183,7 @@
                   </button>
                 </article>
               </li>
-              <li class="categories-list__item">
+              <li class="categories-list__item category-2">
                 <article class="product-card">
                   <a class="product-card__link" href="#">
                     <h3 class="product-card__title">Королівський чізбургер</h3>
@@ -193,7 +204,7 @@
                   </button>
                 </article>
               </li>
-              <li class="categories-list__item">
+              <li class="categories-list__item category-2">
                 <article class="product-card">
                   <a class="product-card__link" href="#">
                     <h3 class="product-card__title">Чорний гамбургер</h3>
@@ -214,7 +225,7 @@
                   </button>
                 </article>
               </li>
-              <li class="categories-list__item">
+              <li class="categories-list__item category-3">
                 <article class="product-card">
                   <a class="product-card__link" href="#">
                     <h3 class="product-card__title">Чікен бургер</h3>
@@ -235,7 +246,7 @@
                   </button>
                 </article>
               </li>
-              <li class="categories-list__item">
+              <li class="categories-list__item category-3">
                 <article class="product-card">
                   <a class="product-card__link" href="#">
                     <h3 class="product-card__title">
@@ -258,7 +269,7 @@
                   </button>
                 </article>
               </li>
-              <li class="categories-list__item">
+              <li class="categories-list__item category-4">
                 <article class="product-card">
                   <a class="product-card__link" href="#">
                     <h3 class="product-card__title">Біфбургер</h3>
@@ -279,7 +290,7 @@
                   </button>
                 </article>
               </li>
-              <li class="categories-list__item">
+              <li class="categories-list__item category-4">
                 <article class="product-card">
                   <a class="product-card__link" href="#">
                     <h3 class="product-card__title">Королівський чізбургер</h3>
@@ -300,7 +311,7 @@
                   </button>
                 </article>
               </li>
-              <li class="categories-list__item">
+              <li class="categories-list__item category-5">
                 <article class="product-card">
                   <a class="product-card__link" href="#">
                     <h3 class="product-card__title">Чорний гамбургер</h3>
@@ -321,7 +332,7 @@
                   </button>
                 </article>
               </li>
-              <li class="categories-list__item">
+              <li class="categories-list__item category-5">
                 <article class="product-card">
                   <a class="product-card__link" href="#">
                     <h3 class="product-card__title">Чікен бургер</h3>
@@ -353,6 +364,37 @@
 
       <footer class="footer">
         <div class="container">
+          <!-- <div class="footer__inner">
+            <h2 class="sr-only">Додаткова інформація</h2>
+            <div class="footer__subscribe">
+              <h3 class="sr-only">Інформація про підписку</h3>
+              <a class="logo footer__logo" href="#">
+                <img
+                  class="logo__img"
+                  src="images/logo.svg"
+                  width="200"
+                  height="39"
+                  alt="логотип SimpleFood" />
+              </a>
+              <form class="form">
+                <label class="sr-only" for="subscription"
+                  >Поле вводу емейлу, щоб підписатись</label
+                >
+                <input
+                  class="form__field"
+                  type="email"
+                  id="subscription"
+                  name="subscription"
+                  placeholder="Ваш email"
+                  required />
+                <button
+                  class="btn icon icon--send subscription__button"
+                  type="submit">
+                  Підписатися
+                </button>
+              </form>
+            </div>
+          </div> -->
           <section class="footer__content">
             <h2 class="sr-only">Додаткова інформація</h2>
             <div class="footer__subscription">
@@ -365,6 +407,7 @@
                   height="39"
                   alt="логотип SimpleFood" />
               </a>
+
               <div class="subscription">
                 <form class="form">
                   <label class="sr-only" for="subscription"
@@ -462,10 +505,12 @@
                       <span
                         class="social__icon"
                         style="
-                          -webkit-mask-image: url('');
-                          mask-image: url('');
+                          -webkit-mask-image: url('images/sprite.svg#icon-facebook');
+                          mask-image: url('images/sprite.svg#icon-facebook');
                         "></span
                     ></a>
+                  </li>
+                  <li class="social__item">
                     <a class="social__link" href="#">
                       <span class="sr-only"
                         >Відвідати сторінку SimpleFood в інстаграм</span
@@ -473,10 +518,12 @@
                       <span
                         class="social__icon"
                         style="
-                          -webkit-mask-image: url('');
-                          mask-image: url('');
+                          -webkit-mask-image: url('images/sprite.svg#icon-twitter');
+                          mask-image: url('images/sprite.svg#icon-twitter');
                         "></span
                     ></a>
+                  </li>
+                  <li class="social__item">
                     <a class="social__link" href="#">
                       <span class="sr-only"
                         >Відвідати сторінку SimpleFood у твітер</span
@@ -484,8 +531,8 @@
                       <span
                         class="social__icon"
                         style="
-                          -webkit-mask-image: url('');
-                          mask-image: url('');
+                          -webkit-mask-image: url('images/sprite.svg#icon-instagram');
+                          mask-image: url('images/sprite.svg#icon-instagram');
                         "></span
                     ></a>
                   </li>

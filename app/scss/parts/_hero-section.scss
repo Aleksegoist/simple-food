@@ -27,6 +27,7 @@ $rightPos: calc((100vw - 1170px) / 2);
     line-height: 1.5;
     margin-bottom: 20px;
     font-size: 20px;
+    @include line-clamp(4);
   }
 
   &__actions {
