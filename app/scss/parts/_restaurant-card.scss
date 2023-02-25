@@ -1,0 +1,86 @@
+.restaurant-card {
+  &__img {
+    margin-bottom: 15px;
+  }
+
+  &__content {
+    padding: 0 20px;
+    margin-bottom: 23px;
+  }
+
+  &__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  &__bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__time {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-size: 18px;
+
+    &::before {
+      content: '';
+      margin-right: 10px;
+      min-width: 22px;
+      height: 22px;
+      background-color: $c-dark;
+      mask-image: url('../images/sprite.svg#icon-time');
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+    }
+  }
+
+  &__btn {
+    width: 27px;
+    height: 24px;
+    border-radius: 20px;
+    padding: 5px 27px;
+    position: relative;
+    cursor: pointer;
+    outline: 1px solid $c-orange-900;
+
+    &::before {
+      content: '';
+      mask-image: url('../images/sprite.svg#icon-arrow-right');
+      background-color: $c-white;
+      mask-repeat: no-repeat;
+      mask-size: 14px 14px;
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      transition: all 0.3s;
+    }
+
+    &:focus {
+      &::before {
+        background-color: $c-orange-900;
+      }
+    }
+
+    &:hover {
+      &::before {
+        box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+        transform: translate(100%, -50%);
+        background-color: $c-orange-900;
+      }
+    }
+
+    &:active {
+      &::before {
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
