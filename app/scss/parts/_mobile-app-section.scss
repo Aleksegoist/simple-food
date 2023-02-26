@@ -1,0 +1,62 @@
+.mobile-app {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content {
+    max-width: 540px;
+    width: 100%;
+  }
+
+  &__title {
+    text-align: left;
+    margin-bottom: 45px;
+  }
+
+  &__text {
+    max-width: 456px;
+    width: 100%;
+    @include fz(20, 14);
+    line-height: 1.5;
+    opacity: 0.9;
+    margin-bottom: 30px;
+  }
+}
+
+.store-btn {
+  display: flex;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+  &__link {
+    display: block;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &--app-store {
+      width: 120px;
+      border-radius: 7px;
+      background-image: url('../images/app_store.png');
+    }
+
+    &--google-play {
+      width: 135px;
+      border-radius: 7px;
+      background-image: url('../images/play_store.png');
+    }
+  }
+
+  &__image {
+    max-width: 570px;
+    width: 100%;
+    height: 380px;
+    background-repeat: no-repeat;
+  }
+}
