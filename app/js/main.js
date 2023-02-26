@@ -42,4 +42,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  const feedbackSwiper = new Swiper('.feedback-slider__inner', {
+    loop: false,
+    speed: 1200,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.feedback-slider__next',
+      prevEl: '.feedback-slider__prev',
+    },
+    pagination: {
+      el: '.feedback-slider__pagination',
+      clickable: true,
+      keyboard: true,
+      renderBullet: (index, className) => {
+        return `<span class="${className} feedback-slider__bullet"></span>`;
+      },
+    },
+  });
 });
