@@ -18,6 +18,14 @@
     display: flex;
     align-items: center;
     gap: 42px;
+
+    @include md($desktop) {
+      padding-right: 10px;
+    }
+
+    @include md($tablet-2) {
+      justify-content: space-between;
+    }
   }
 
   &__actions {
@@ -39,6 +47,15 @@
         background-color: $c-orange-900;
       }
     }
+  }
+
+  @include md($desktop) {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  @include md($tablet-2) {
+    background-color: $c-silver-100;
   }
 }
 
@@ -72,5 +89,9 @@
     &--current {
       color: $c-orange-900;
     }
+  }
+
+  @include md($tablet-2) {
+    display: none;
   }
 }

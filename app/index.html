@@ -57,6 +57,10 @@
                 <span class="sr-only">Кнопка з іконкою кошика</span>
                 <span class="btn-counter">4</span>
               </button>
+              <button class="burger" type="button">
+                <span class="burger__line"></span>
+                <span class="sr-only">Кнопка мобільного меню</span>
+              </button>
             </div>
           </nav>
         </div>
@@ -67,23 +71,33 @@
           Сервіс доставки SimpleFood - номер один в Україні
         </h1>
 
-        <section
-          class="hero mb-120"
-          style="background-image: url('images/hero_scooter_guy.png')">
+        <section class="hero mb-120">
           <h2 class="sr-only">Переваги сервісу доставку simpleFood</h2>
           <div class="container">
-            <div class="hero__title">
-              Доставка <span class="text-orange">за 15 хвилин</span>
-            </div>
-            <div class="hero__description">
-              <p>
-                Найшвидший сервіс доставки їжі у вашому місті. Якщо запізнемось
-                - то доставка за наш рахунок
-              </p>
-            </div>
-            <div class="hero__actions">
-              <a class="btn" href="#">Замовити</a>
-              <a class="td-link" href="#">Детальніше</a>
+            <div class="hero__inner">
+              <div class="hero__content">
+                <h2 class="hero__title">
+                  Доставка<br />
+                  <span class="hero__time hero__time--orange">
+                    за 15 хвилин
+                  </span>
+                </h2>
+                <div class="hero__text">
+                  <p>
+                    Найшвидший сервіс доставки їжі у вашому місті. Якщо
+                    запізнемось - то доставка за наш рахунок
+                  </p>
+                </div>
+                <div class="hero__row">
+                  <a class="btn" href="#">Замовити</a>
+                  <a class="td-link" href="#">Детальніше</a>
+                </div>
+              </div>
+              <div
+                class="hero__bg"
+                style="
+                  background-image: url('images/hero_scooter_guy.png');
+                "></div>
             </div>
           </div>
         </section>
@@ -398,9 +412,9 @@
         <section class="restaurants mb-120">
           <div class="container">
             <h2 class="title">Найкращі ресторани</h2>
-            <div class="restaurants__inner">
-              <ul class="restaurants__list">
-                <li class="restaurants__item">
+            <div class="restaurants__inner swiper">
+              <ul class="restaurants__list swiper-wrapper">
+                <li class="restaurants__item swiper-slide">
                   <article class="restaurant-card">
                     <figure class="restaurant-card__link">
                       <img
@@ -423,7 +437,7 @@
                     </div>
                   </article>
                 </li>
-                <li class="restaurants__item">
+                <li class="restaurants__item swiper-slide">
                   <article class="restaurant-card">
                     <figure class="restaurant-card__link" href="#">
                       <img
@@ -444,7 +458,7 @@
                     </div>
                   </article>
                 </li>
-                <li class="restaurants__item">
+                <li class="restaurants__item swiper-slide">
                   <article class="restaurant-card">
                     <figure class="restaurant-card__link" href="#">
                       <img
@@ -466,7 +480,7 @@
                     </div>
                   </article>
                 </li>
-                <li class="restaurants__item">
+                <li class="restaurants__item swiper-slide">
                   <article class="restaurant-card">
                     <figure class="restaurant-card__link" href="#">
                       <img
@@ -487,7 +501,7 @@
                     </div>
                   </article>
                 </li>
-                <li class="restaurants__item">
+                <li class="restaurants__item swiper-slide">
                   <article class="restaurant-card">
                     <figure class="restaurant-card__link" href="#">
                       <img
@@ -508,7 +522,7 @@
                     </div>
                   </article>
                 </li>
-                <li class="restaurants__item">
+                <li class="restaurants__item swiper-slide">
                   <article class="restaurant-card">
                     <figure class="restaurant-card__link" href="#">
                       <img
@@ -530,6 +544,9 @@
                   </article>
                 </li>
               </ul>
+            </div>
+            <div class="restaurant-card__pagination swiper-pagination">
+              <span class="sr-only">Перегляд слайдів з ресторанами</span>
             </div>
           </div>
         </section>

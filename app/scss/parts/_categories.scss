@@ -55,10 +55,36 @@
       }
     }
   }
+
+  @include md($tablet) {
+    justify-content: flex-start;
+    overflow: scroll;
+    padding: 2px;
+    scrollbar-width: none;
+  }
 }
 
 .categories-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 30px;
+
+  @include md($desktop) {
+    padding-right: 25px;
+  }
+
+  @include md($tablet-2) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include md($tablet) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  @include md($phone) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
 }

@@ -6,6 +6,10 @@
     max-width: 1030px;
     width: 100%;
     margin: 0 auto;
+
+    @include md($tablet) {
+      position: relative;
+    }
   }
 
   &__picture {
@@ -13,17 +17,28 @@
     height: 585px;
     background-size: contain;
     background-repeat: no-repeat;
+
+    @include md($tablet) {
+      position: absolute;
+      z-index: -1;
+      background-size: contain;
+      opacity: 0.3;
+      height: 462px;
+    }
   }
 
   &__content {
     max-width: 470px;
     width: 100%;
-    background-color: rgba($c-white, 0.85);
   }
 
   &__title {
     text-align: left;
     margin-bottom: 30px;
+
+    @include md($tablet) {
+      margin-bottom: 20px;
+    }
   }
 
   &__text {
@@ -32,10 +47,18 @@
     margin-bottom: 30px;
     @include line-clamp(4);
     @include fz(20, 18);
+
+    @include md($tablet) {
+      margin-right: 30px;
+    }
   }
 
   &__list {
     margin-bottom: 30px;
+
+    @include md($tablet) {
+      margin-bottom: 20px;
+    }
   }
 
   &__item {
@@ -44,13 +67,17 @@
 
     &:not(:last-child) {
       margin-bottom: 20px;
+
+      @include md($tablet) {
+        margin-bottom: 18px;
+      }
     }
   }
 
   &__icon {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
 
     &::before {
       content: '';
@@ -80,5 +107,8 @@
   }
 
   &__btn {
+    @include md($tablet) {
+      font-size: 14px;
+    }
   }
 }

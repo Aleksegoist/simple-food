@@ -20,8 +20,8 @@ function browsersync() {
 
 function styles() {
   return src('app/scss/style.scss')
-    .pipe(scss({ outputStyle: 'compressed' }))
-    .pipe(concat('style.min.css'))
+    .pipe(scss())
+    .pipe(concat('style.css'))
     .pipe(
       autoprefixer({
         overrideBrowserslist: ['last 10 versions'],

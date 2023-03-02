@@ -1,5 +1,5 @@
 // --- Миксин уменьшения размера шрифта (адаптив) ---
-@mixin fz($max, $min, $wmax: 1920, $wmin: 375) {
+@mixin fz($max, $min, $wmax: 1905, $wmin: 375) {
   font-size: calc(
     #{$min}px + (#{$max} - #{$min}) *
       ((100vw - #{$wmin}px) / (#{$wmax} - #{$wmin}))
@@ -53,6 +53,50 @@ $breakpoints: (
 
 @mixin md($width) {
   @media (max-width: #{$width}px) {
+    @content;
+  }
+}
+
+@mixin burger {
+  width: $burgerWidth;
+  height: $burgerHeight;
+  position: relative;
+  color: $burgerColor;
+  margin-right: 7px;
+
+  &__line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: $burgerLineHeight;
+    background-color: currentColor;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $burgerLineHeight;
+    background-color: currentColor;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    top: calc(100% - $burgerLineHeight);
+  }
+}
+
+@mixin land($height) {
+  @media (max-height: #{$height}px) and (orientation: landscape) {
     @content;
   }
 }

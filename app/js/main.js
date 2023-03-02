@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const feedbackSwiper = new Swiper('.feedback-slider__inner', {
+  let feedbackSwiper = new Swiper('.feedback-slider__inner', {
     loop: false,
     speed: 1200,
     spaceBetween: 30,
@@ -60,4 +60,20 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     },
   });
+
+  if (window.matchMedia('(max-width: 768px)').matches) {
+    let restaurantsSwiper = new Swiper('.restaurants__inner', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: false,
+      pagination: {
+        el: '.restaurant-card__pagination',
+        clickable: true,
+        keyboard: true,
+        renderBullet: (index, className) => {
+          return `<span class="${className} restaurant-card__bullet"></span>`;
+        },
+      },
+    });
+  }
 });
