@@ -26,3 +26,33 @@
     @content;
   }
 }
+
+// --- Миксин для адаптива картинок ---
+@mixin adaptive-image($width, $height) {
+  position: relative;
+  width: 100%;
+  padding-bottom: calc(($height / $width) * 100%);
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+$breakpoints: (
+  'tel': 375,
+  'phone': 560px,
+  'tablet': 768px,
+  'tablet-2': 992px,
+  'desktop': 1230px,
+);
+
+@mixin md($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+  }
+}
