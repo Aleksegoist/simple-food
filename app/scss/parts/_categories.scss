@@ -4,6 +4,10 @@
   justify-content: center;
   gap: 20px;
 
+  @include md($tablet-2) {
+    gap: 10px;
+  }
+
   &__btn {
     outline: 1px solid $c-silver-200;
     border-radius: 5px;
@@ -71,6 +75,8 @@
 
   @include md($tablet-2) {
     grid-template-columns: repeat(4, 1fr);
+    padding-right: 30px;
+    gap: 15px;
   }
 
   @include md($tablet) {
@@ -82,5 +88,6 @@
   @include md($phone) {
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
+    grid-row-gap: 10px;
   }
 }
