@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.header');
-
   window.onscroll = () => {
     if (window.pageYOffset > 100) {
       header.classList.add('sticky');
@@ -79,25 +78,17 @@ document.addEventListener('DOMContentLoaded', () => {
     bodyLock.classList.remove('lock'); //Разрешаем скроллить
   });
 
-  openFilters.addEventListener('click', () => {
-    filterMenu.classList.toggle('filters-menu--active');
-    if (filterMenu.classList.contains('filters-menu--active')) {
-      bodyLock.classList.add('lock');
-    } else {
-      bodyLock.classList.remove('lock');
-    }
-  });
-
-  filterMenu.onclick = function (event) {
-    let e = document.querySelector('.filters-menu__wrapper');
-    if (!e.contains(event.target)) {
-      filterMenu.classList.remove('filters-menu--active');
-      bodyLock.classList.remove('lock');
-    }
-  };
-
-  filtersBurger.addEventListener('click', () => {
-    filterMenu.classList.remove('filters-menu--active');
-    bodyLock.classList.remove('lock'); //Разрешаем скроллить
-  });
+  // let restaurantsSwiper = new Swiper('.restaurants__container', {
+  //   slidePerView: 1,
+  //   spaceBetween: 30,
+  //   // loop: false,
+  //   // pagination: {
+  //   //   el: '.restaurant-card__pagination',
+  //   //   clickable: true,
+  //   //   keyboard: true,
+  //   //   renderBullet: (index, className) => {
+  //   //     return `<span class="${className} restaurant-card__bullet"></span>`;
+  //   //   },
+  //   // },
+  // });
 });

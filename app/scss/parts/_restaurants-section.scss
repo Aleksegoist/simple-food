@@ -1,15 +1,30 @@
 .restaurants {
-  &__list {
+  &__container {
+  }
+
+  &__inner {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    // gap: 30px;
   }
+
+  &__item {
+  }
+}
+
+.swiper-pagination {
+  position: static;
+  display: flex;
+  align-items: center;
+  width: auto !important;
+  margin: 0 23px;
+  justify-content: center;
 }
 
 .restaurant-card__bullet {
   width: 15px;
   height: 15px;
-  background-color: $c-gray;
+  background-color: $c-silver-200;
   opacity: 1;
   outline: transparent;
   margin: 0 !important;
@@ -31,4 +46,8 @@
   &:active {
     background-color: rgba($c-orange-900, 0.5);
   }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $c-orange-900;
 }
