@@ -1,38 +1,8 @@
 .restaurants {
-  &__inner {
-    overflow: visible;
-    background-color: transparent;
-
-    @include md($desktop) {
-      margin-right: 30px;
-    }
-
-    @include md($tablet) {
-      overflow: hidden;
-      width: 345px;
-      border-radius: 10px;
-      margin: 0 auto 30px;
-      padding-right: 0;
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-    }
-  }
-
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
-    @include md($desktop) {
-      grid-template-columns: repeat(2, 370px);
-    }
-
-    @include md($tablet-2) {
-      grid-template-columns: repeat(2, 345px);
-    }
-
-    @include md($tablet) {
-      display: flex;
-      justify-content: flex-start;
-    }
+    gap: 30px;
   }
 }
 

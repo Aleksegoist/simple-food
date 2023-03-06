@@ -43,37 +43,61 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  let feedbackSwiper = new Swiper('.feedback-slider__inner', {
-    loop: false,
-    speed: 1200,
-    spaceBetween: 30,
-    navigation: {
-      nextEl: '.feedback-slider__next',
-      prevEl: '.feedback-slider__prev',
-    },
-    pagination: {
-      el: '.feedback-slider__pagination',
-      clickable: true,
-      keyboard: true,
-      renderBullet: (index, className) => {
-        return `<span class="${className} feedback-slider__bullet"></span>`;
-      },
-    },
+  const burger = document.querySelector('.burger'); //наша кнопка
+  const mobileBurger = document.querySelector('.mobile-burger'); //наша кнопка
+  const filtersBurger = document.querySelector('.filters-burger'); //наша кнопка
+  const mobileMenu = document.querySelector('.mobile-menu'); //мобильное меню
+  const bodyLock = document.querySelector('body'); //ищем как селектор ТЕГА
+  const filterMenu = document.querySelector('.filters-menu');
+  const openFilters = document.querySelector('.open-filters');
+
+  burger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('mobile-menu--active'); //когда меню открыто
+    if (mobileMenu.classList.contains('mobile-menu--active')) {
+      //Проверяем, есть ли у меню активный класс
+      mobileBurger.classList.add('mobile-burger--active'); //Когда открыто, иконка становится крестиком
+      bodyLock.classList.add('lock'); //Блокируем скролл при открытом меню
+    } else {
+      //Когда нету активного класса у меню
+      mobileBurger.classList.remove('mobile-burger--active'); //Возвращает в исходное состояние
+      bodyLock.classList.remove('lock'); //Разрешаем скроллить
+    }
   });
 
-  if (window.matchMedia('(max-width: 768px)').matches) {
-    let restaurantsSwiper = new Swiper('.restaurants__inner', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: false,
-      pagination: {
-        el: '.restaurant-card__pagination',
-        clickable: true,
-        keyboard: true,
-        renderBullet: (index, className) => {
-          return `<span class="${className} restaurant-card__bullet"></span>`;
-        },
-      },
-    });
-  }
+  mobileMenu.onclick = function (event) {
+    let e = document.querySelector('.mobile-menu__wrapper');
+    if (!e.contains(event.target)) {
+      mobileBurger.classList.remove('mobile-burger--active');
+      mobileMenu.classList.remove('mobile-menu--active');
+      bodyLock.classList.remove('lock');
+    }
+  };
+
+  mobileBurger.addEventListener('click', () => {
+    mobileBurger.classList.remove('mobile-burger--active');
+    mobileMenu.classList.remove('mobile-menu--active');
+    bodyLock.classList.remove('lock'); //Разрешаем скроллить
+  });
+
+  openFilters.addEventListener('click', () => {
+    filterMenu.classList.toggle('filters-menu--active');
+    if (filterMenu.classList.contains('filters-menu--active')) {
+      bodyLock.classList.add('lock');
+    } else {
+      bodyLock.classList.remove('lock');
+    }
+  });
+
+  filterMenu.onclick = function (event) {
+    let e = document.querySelector('.filters-menu__wrapper');
+    if (!e.contains(event.target)) {
+      filterMenu.classList.remove('filters-menu--active');
+      bodyLock.classList.remove('lock');
+    }
+  };
+
+  filtersBurger.addEventListener('click', () => {
+    filterMenu.classList.remove('filters-menu--active');
+    bodyLock.classList.remove('lock'); //Разрешаем скроллить
+  });
 });

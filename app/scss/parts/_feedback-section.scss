@@ -9,9 +9,6 @@
     display: flex;
   }
 
-  &__content {
-  }
-
   &__img {
     border-radius: 50%;
     margin-right: 40px;
@@ -129,31 +126,5 @@
     &::after {
       mask-image: url('../images/sprite.svg#icon-right');
     }
-  }
-}
-
-.swiper-pagination {
-  position: static;
-  display: flex;
-  align-items: center;
-  width: auto !important;
-  margin: 0 29px;
-  justify-content: center;
-}
-
-.swiper-pagination-bullet {
-  width: 15px;
-  height: 15px;
-  color: $c-gray;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: $c-orange-900;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  &::after {
-    display: none;
   }
 }

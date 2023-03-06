@@ -5,7 +5,7 @@
   right: 0;
   z-index: 99;
   background-color: $c-white;
-  padding: 55px 0;
+  padding: 60px 0;
   border-bottom: 3px solid transparent;
   transition: padding 0.3s ease-in-out, border-color 0.3s ease-in-out;
 
@@ -17,13 +17,9 @@
   &__nav {
     display: flex;
     align-items: center;
-    gap: 42px;
+    gap: 50px;
 
-    @include md($desktop) {
-      padding-right: 10px;
-    }
-
-    @include md($tablet-2) {
+    @include md($tablet) {
       justify-content: space-between;
     }
   }
@@ -31,6 +27,7 @@
   &__actions {
     display: flex;
     align-items: center;
+    gap: 10px;
   }
 
   &__btn {
@@ -49,13 +46,8 @@
     }
   }
 
-  @include md($desktop) {
-    padding-top: 22px;
-    padding-bottom: 22px;
-  }
-
   @include md($tablet-2) {
-    background-color: $c-silver-100;
+    padding: 25px 0;
   }
 }
 
@@ -91,7 +83,7 @@
     }
   }
 
-  @include md($tablet-2) {
+  @include md($tablet) {
     display: none;
   }
 }

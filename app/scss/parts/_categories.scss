@@ -69,10 +69,6 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 30px;
 
-  @include md($desktop) {
-    padding-right: 25px;
-  }
-
   @include md($tablet-2) {
     grid-template-columns: repeat(4, 1fr);
   }

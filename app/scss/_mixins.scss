@@ -20,13 +20,6 @@
   }
 }
 
-// --- Миксин для адаптива ---
-@mixin r($width) {
-  @media (max-width: #{$width}px) {
-    @content;
-  }
-}
-
 // --- Миксин для адаптива картинок ---
 @mixin adaptive-image($width, $height) {
   position: relative;
@@ -57,12 +50,20 @@ $breakpoints: (
   }
 }
 
+@mixin land($height) {
+  @media (max-height: #{$height}px) and (orientation: landscape) {
+    @content;
+  }
+}
+
 @mixin burger {
-  width: $burgerWidth;
-  height: $burgerHeight;
+  width: $burgerWidth; //указываем ширину линий
+  height: $burgerHeight; //указываем высоту линий
   position: relative;
-  color: $burgerColor;
-  margin-right: 7px;
+  color: $burgerColor; //указываем цвет линий
+  background-color: $c-white;
+  margin-right: 30px;
+  margin-left: 10px;
 
   &__line {
     position: absolute;
@@ -70,7 +71,7 @@ $breakpoints: (
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
-    height: $burgerLineHeight;
+    height: $burgerLineHeight; //указываем расстояние между линиями
     background-color: currentColor;
     transition: transform 0.3s ease-in-out;
   }
@@ -95,8 +96,58 @@ $breakpoints: (
   }
 }
 
-@mixin land($height) {
-  @media (max-height: #{$height}px) and (orientation: landscape) {
-    @content;
+@mixin mobile-burger {
+  width: $mobileburgerWidth; //указываем ширину линий
+  height: $mobileburgerHeight; //указываем высоту линий
+  position: relative;
+  color: $burgerColor; //указываем цвет линий
+
+  &__line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: $burgerLineHeight; //указываем расстояние между линиями
+    background-color: currentColor;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $burgerLineHeight;
+    background-color: currentColor;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    top: calc(100% - $burgerLineHeight);
+  }
+
+  &--active {
+    .mobile-burger__line {
+      transform: scale(0);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      top: 50%;
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      top: 50%;
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
   }
 }
