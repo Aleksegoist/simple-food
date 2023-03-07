@@ -78,17 +78,37 @@ document.addEventListener('DOMContentLoaded', () => {
     bodyLock.classList.remove('lock'); //Разрешаем скроллить
   });
 
-  // let restaurantsSwiper = new Swiper('.restaurants__container', {
-  //   slidePerView: 1,
-  //   spaceBetween: 30,
-  //   // loop: false,
-  //   // pagination: {
-  //   //   el: '.restaurant-card__pagination',
-  //   //   clickable: true,
-  //   //   keyboard: true,
-  //   //   renderBullet: (index, className) => {
-  //   //     return `<span class="${className} restaurant-card__bullet"></span>`;
-  //   //   },
-  //   // },
-  // });
+  let feedbackSwiper = new Swiper('.feedback-slider__inner', {
+    loop: false,
+    speed: 1200,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.reviews-slider__next',
+      prevEl: '.reviews-slider__prev',
+    },
+    pagination: {
+      el: '.reviews-slider__pagination',
+      clickable: true,
+      keyboard: true,
+      renderBullet: (index, className) => {
+        return `<span class="${className} reviews-slider__bullet"></span>`;
+      },
+    },
+  });
+
+  if (window.matchMedia('(max-width: 768px)').matches) {
+    let restaurantsSwiper = new Swiper('.best-restaurants__container', {
+      slidesPerview: 1,
+      spaceBetween: 30,
+      loop: false,
+      pagination: {
+        el: '.restaurants-card__pagination',
+        clickable: true,
+        keyboard: true,
+        renderBullet: (index, className) => {
+          return `<span class="${className} restaurants-card__bullet"></span>`;
+        },
+      },
+    });
+  }
 });
