@@ -4,10 +4,29 @@
     flex-wrap: wrap;
     gap: 70px;
     margin-bottom: 60px;
+
+    @include md($desktop) {
+      gap: 40px;
+    }
+
+    @include md($phone) {
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 54px;
+    }
   }
 
   &__logo {
     margin-bottom: 30px;
+  }
+
+  &__nav {
+    display: flex;
+
+    @include md($phone) {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
   }
 
   &__menu {
@@ -15,6 +34,19 @@
     grid-template-columns: repeat(3, auto);
     grid-auto-flow: column;
     gap: 20px 90px;
+    margin-right: 151px;
+
+    @include md($desktop) {
+      gap: 20px 40px;
+      margin-right: 40px;
+    }
+
+    @include md($phone) {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      margin: 0;
+    }
 
     .menu__item {
       grid-column: 3;
@@ -30,7 +62,10 @@
 
   &__contacts {
     margin-left: auto;
-    margin-right: 80px;
+
+    @include md($phone) {
+      margin: 0;
+    }
   }
 
   &__bottom {
@@ -40,6 +75,10 @@
     background-color: $c-darkBlue-900;
     padding: 30px;
     text-align: center;
+
+    @include md($phone) {
+      padding: 20px;
+    }
   }
 }
 

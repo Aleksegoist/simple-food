@@ -3,16 +3,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include md($tablet-2) {
+      padding-right: 30px;
+    }
   }
 
   &__content {
     max-width: 540px;
     width: 100%;
+
+    @include md($tablet) {
+      max-width: none;
+    }
   }
 
   &__title {
     text-align: left;
     margin-bottom: 45px;
+
+    @include md($phone) {
+      margin-bottom: 15px;
+    }
   }
 
   &__text {
@@ -22,6 +34,10 @@
     line-height: 1.5;
     opacity: 0.9;
     margin-bottom: 30px;
+
+    @include md($phone) {
+      margin-bottom: 15px;
+    }
   }
 }
 
@@ -58,5 +74,9 @@
     width: 100%;
     height: 380px;
     background-repeat: no-repeat;
+
+    @include md($phone) {
+      display: none;
+    }
   }
 }
