@@ -1,4 +1,7 @@
 .features {
+  @include md($phone) {
+    margin-bottom: 64px;
+  }
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -39,6 +42,10 @@
     @include md($tablet) {
       margin-bottom: 20px;
     }
+
+    @include md($phone) {
+      margin-bottom: 29px;
+    }
   }
 
   &__text {
@@ -50,6 +57,10 @@
 
     @include md($tablet) {
       margin-right: 30px;
+    }
+
+    @include md($phone) {
+      margin-bottom: 20px;
     }
   }
 
@@ -71,6 +82,10 @@
       @include md($tablet) {
         margin-bottom: 18px;
       }
+
+      @include md($phone) {
+        margin-bottom: 15px;
+      }
     }
   }
 
@@ -89,6 +104,10 @@
       mask-repeat: no-repeat;
       mask-size: contain;
       mask-position: center;
+
+      @include md($phone) {
+        margin-right: 12px;
+      }
     }
 
     &--delivery {
@@ -109,6 +128,10 @@
   &__btn {
     @include md($tablet) {
       font-size: 14px;
+    }
+
+    @include md($phone) {
+      padding: 11px 32px;
     }
   }
 }

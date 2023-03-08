@@ -28,6 +28,10 @@
     display: flex;
     align-items: center;
     gap: 10px;
+
+    @include md($phone) {
+      gap: 8px;
+    }
   }
 
   &__btn {
@@ -48,6 +52,10 @@
 
   @include md($tablet-2) {
     padding: 25px 0;
+  }
+
+  @include md($phone) {
+    padding: 14px 0;
   }
 }
 

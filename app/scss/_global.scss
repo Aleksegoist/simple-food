@@ -208,6 +208,11 @@ body {
   transition: color 0.3s ease-in-out, outline-color 0.3s ease-in-out,
     box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
+  @include md($phone) {
+    font-size: 14px;
+    padding: 8px 24px;
+  }
+
   &:focus {
     background-color: rgba($c-orange-900, 0.1);
     color: $c-orange-900;
@@ -321,6 +326,11 @@ body {
 .burger {
   @include md($tablet) {
     @include burger;
+  }
+
+  @include md($phone) {
+    // @include burger;
+    margin-right: 37px;
   }
 }
 

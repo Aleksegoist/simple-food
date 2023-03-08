@@ -1,6 +1,20 @@
 .popular {
+  @include md($phone) {
+    margin-bottom: 67px;
+  }
+
+  &__title {
+    @include md($phone) {
+      margin-bottom: 19px;
+    }
+  }
+
   &__nav {
     margin-bottom: 45px;
+
+    @include md($phone) {
+      margin-bottom: 20px;
+    }
   }
 
   &__list {
@@ -11,5 +25,10 @@
     display: block;
     width: fit-content;
     margin: 0 auto;
+
+    @include md($phone) {
+      font-size: 20px;
+      padding-right: 30px;
+    }
   }
 }
