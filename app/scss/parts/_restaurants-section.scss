@@ -1,6 +1,14 @@
 .best-restaurants {
   text-align: center;
 
+  @include md($phone) {
+    padding-right: 30px;
+  }
+
+  &__title {
+    margin-right: 0;
+  }
+
   &__inner {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -75,4 +83,10 @@
 
 .swiper-pagination-bullet-active {
   background-color: $c-orange-900;
+}
+
+.restaurants-card__pagination {
+  @include md($phone) {
+    padding-top: 30px;
+  }
 }

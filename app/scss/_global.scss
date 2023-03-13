@@ -98,6 +98,11 @@ body {
   &--send {
     &::before {
       mask-image: url('../images/sprite.svg#icon-telegram');
+
+      @include md($phone) {
+        min-width: 14px;
+        height: 13px;
+      }
     }
   }
 
@@ -329,7 +334,6 @@ body {
   }
 
   @include md($phone) {
-    // @include burger;
     margin-right: 37px;
   }
 }

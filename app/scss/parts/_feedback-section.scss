@@ -1,3 +1,15 @@
+.feedback {
+  @include md($phone) {
+    padding-right: 34px;
+  }
+
+  &__title {
+    @include md($phone) {
+      margin-right: 0;
+    }
+  }
+}
+
 .feedback-slider {
   position: relative;
   &__inner {
@@ -29,7 +41,8 @@
     @include md($phone) {
       width: 100px;
       height: 100px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      margin-right: 0;
     }
   }
 
@@ -75,6 +88,11 @@
       left: 0;
       top: -5px;
       background-color: $c-gray;
+
+      @include md($phone) {
+        top: -11px;
+        left: 7px;
+      }
     }
 
     &::after {
@@ -85,6 +103,11 @@
 
       @include md($desktop) {
         right: 9px;
+      }
+
+      @include md($phone) {
+        right: 4px;
+        bottom: 80px;
       }
     }
   }
@@ -116,6 +139,11 @@
         justify-content: space-between;
         left: 33px;
         right: 33px;
+      }
+
+      @include md($phone) {
+        top: 33px;
+        left: 39px;
       }
     }
 

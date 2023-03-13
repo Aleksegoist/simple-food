@@ -12,7 +12,7 @@
     @include md($phone) {
       flex-direction: column;
       gap: 30px;
-      margin-bottom: 54px;
+      margin-bottom: 50px;
     }
   }
 
@@ -20,12 +20,19 @@
     margin-bottom: 30px;
   }
 
+  &__img {
+    @include md($phone) {
+      width: 200px;
+      height: 39px;
+    }
+  }
+
   &__nav {
     display: flex;
 
     @include md($phone) {
       flex-direction: column-reverse;
-      gap: 30px;
+      gap: 27px;
     }
   }
 
@@ -96,6 +103,10 @@
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0;
+
+    @include md($phone) {
+      padding: 14px 0;
+    }
 
     &::before {
       background-color: $c-white;
