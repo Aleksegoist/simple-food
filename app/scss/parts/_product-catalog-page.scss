@@ -167,7 +167,7 @@
     line-height: 1.2;
     letter-spacing: 0.03em;
     padding-left: 36px;
-    transition: color 0.2s;
+    transition: color 0.3s;
     &::before {
       background-color: rgba($c-orange-900, 0.1);
       border: 1px solid $c-silver-200;
@@ -197,4 +197,83 @@
       }
     }
   }
+}
+
+.product-price {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  &__item {
+    color: $c-gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0.03em;
+    font-size: 16px;
+    line-height: 1;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__from,
+  &__to {
+    text-align: center;
+    width: 70px;
+    height: 40px;
+    background: rgba($c-orange-900, 0.1);
+    border: 1px solid $c-silver-200;
+    border-radius: 3px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $c-dark;
+  }
+}
+
+.irs--flat {
+  height: 18px;
+}
+
+.irs--flat .irs-line {
+  top: 8px;
+  height: 2px;
+  background-color: $c-gray;
+  border-radius: 0;
+}
+
+.irs--flat .irs-handle {
+  top: 0px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: $c-orange-900;
+  cursor: pointer;
+}
+
+.irs--flat .irs-handle > i:first-child {
+  display: none;
+}
+
+.irs--flat .irs-bar {
+  top: 8px;
+  height: 2px;
+  background-color: $c-orange-900;
+  cursor: pointer;
+}
+
+.irs-from,
+.irs-to,
+.irs-single {
+  display: none;
+}
+
+.irs--flat .irs-min,
+.irs--flat .irs-max {
+  display: none;
 }
