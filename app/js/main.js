@@ -169,4 +169,18 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     });
   }
+
+  let discountSwiper = new Swiper('.discounts__container', {
+    slidesperview: 1,
+    spaceBetween: 30,
+    loop: false,
+    pagination: {
+      el: '.restaurants-card__pagination',
+      clickable: true,
+      keyboard: true,
+      renderBullet: (index, className) => {
+        return `<span class="${className} restaurants-card__bullet"></span>`;
+      },
+    },
+  });
 });

@@ -13,6 +13,10 @@
     }
   }
 
+  &__content-first {
+    margin-bottom: 30px;
+  }
+
   &__link {
     overflow: hidden;
     @include adaptive-image(370px, 300px);
@@ -26,6 +30,10 @@
     text-align: start;
     padding: 15px 20px 20px 20px;
 
+    &--discounts {
+      padding: 15px 20px;
+    }
+
     @include md($phone) {
       padding: 35px 20px 20px 20px;
     }
@@ -34,6 +42,10 @@
   &__title {
     font-size: 24px;
     margin-bottom: 20px;
+
+    &--discounts {
+      margin-bottom: 0;
+    }
   }
 
   &__bottom-row {

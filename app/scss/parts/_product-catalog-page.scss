@@ -1,9 +1,44 @@
 .product-catalog {
+  margin-bottom: 120px;
+
+  @include md($phone) {
+    margin-bottom: 40px;
+  }
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 60px;
+
+    @include md($tablet-2) {
+      margin-bottom: 40px;
+    }
+
+    @include md($tablet) {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    @include md($desktop) {
+      justify-content: space-evenly;
+    }
+
+    @include md($tablet-2) {
+      justify-content: center;
+    }
+  }
+
+  &__filters {
+    @include md($tablet-2) {
+      display: none;
+    }
   }
 
   &__top {
@@ -12,6 +47,10 @@
 
   &__title {
     margin-bottom: 0;
+
+    @include md($tablet) {
+      margin-bottom: 20px;
+    }
   }
 
   &__selects {
@@ -276,4 +315,176 @@
 .irs--flat .irs-min,
 .irs--flat .irs-max {
   display: none;
+}
+
+.burgers-catalog {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 60px;
+    text-align: center;
+
+    @include md($desktop) {
+      grid-template-columns: repeat(3, 210px);
+    }
+
+    @include md($tablet-2) {
+      grid-template-columns: repeat(3, 210px);
+      grid-gap: 20px;
+    }
+
+    @include md($tablet) {
+      grid-template-columns: repeat(3, 170px);
+    }
+
+    @include md($phone) {
+      grid-template-columns: repeat(2, 170px);
+      grid-column-gap: 5px;
+      grid-row-gap: 10px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__item {
+    &:nth-child(n + 7) {
+      @include md($phone) {
+        display: none;
+      }
+    }
+  }
+}
+
+.pagination {
+  &__items {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    display: block;
+
+    &:nth-child(3),
+    &:nth-child(5) {
+      @include md($phone) {
+        display: none;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 6px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    color: $c-darkBlue-900;
+    width: 48px;
+    height: 48px;
+    background-color: rgba($c-orange-900, 0.1);
+    border-radius: 3px;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+
+    &--active {
+      border: 1px solid #363853;
+    }
+
+    &--from,
+    &--to {
+      &::after {
+        content: '';
+        position: absolute;
+        mask-image: url(../images/sprite.svg#icon-chevron-left);
+        background-color: $c-gray;
+        width: 11px;
+        height: 18px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        mask-repeat: no-repeat;
+        mask-size: cover;
+        mask-position: center;
+      }
+    }
+
+    &--to {
+      &::after {
+        mask-image: url(../images/sprite.svg#icon-chevron-right);
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px $c-orange-900;
+    }
+
+    &:hover {
+      background-color: $c-orange-900;
+      color: $c-white;
+
+      &::after {
+        background-color: $c-white;
+      }
+    }
+
+    &:active {
+      box-shadow: inset 0 -1px 4px 2px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.discounts {
+  margin-bottom: 120px;
+
+  @include md($phone) {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+
+    @include md($phone) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 370px);
+    grid-column-gap: 30px;
+
+    @include md($desktop) {
+      grid-template-columns: repeat(2, 370px);
+      grid-gap: 30px;
+      justify-content: center;
+    }
+
+    @include md($tablet-2) {
+      grid-template-columns: repeat(2, 345px);
+    }
+
+    @include md($tablet) {
+      grid-gap: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__container {
+    overflow: visible;
+    background-color: transparent;
+
+    @include md($tablet) {
+      margin-bottom: 45px;
+      overflow: hidden;
+      width: 345px;
+      height: 392px;
+      border-radius: 10px;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    }
+  }
 }
