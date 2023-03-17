@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  $('.select-style').styler();
+
   const header = document.querySelector('.header');
   window.onscroll = () => {
     if (window.pageYOffset > 100) {
