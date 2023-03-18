@@ -1,62 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  $('.select-style').styler();
-
-  let $range = $('.product-price__input'),
-    $inputFrom = $('.product-price__from'),
-    $inputTo = $('.product-price__to'),
-    instance,
-    min = 60,
-    max = 1100,
-    from = 100,
-    to = 1000;
-
-  $range.ionRangeSlider({
-    type: 'double',
-    min: min,
-    max: max,
-    onStart: updateInputs,
-    onChange: updateInputs,
-  });
-
-  instance = $range.data('ionRangeSlider');
-
-  function updateInputs(data) {
-    from = data.from;
-    to = data.to;
-    $inputFrom.prop('value', from);
-    $inputTo.prop('value', to);
-  }
-
-  $inputFrom.on('change', function () {
-    let val = $(this).prop('value');
-    if (val < min) {
-      val = min;
-    } else if (val > to) {
-      val = to;
-    }
-    instance.update({
-      from: val,
-    });
-    instance1.update({
-      from: val,
-    });
-  });
-
-  $inputTo.on('change', function () {
-    let val = $(this).prop('value');
-    if (val < from) {
-      val = from;
-    } else if (val > max) {
-      val = max;
-    }
-    instance.update({
-      to: val,
-    });
-    instance1.update({
-      to: val,
-    });
-  });
-
   const header = document.querySelector('.header');
   window.onscroll = () => {
     if (window.pageYOffset > 100) {
@@ -136,6 +78,28 @@ document.addEventListener('DOMContentLoaded', () => {
     bodyLock.classList.remove('lock'); //Разрешаем скроллить
   });
 
+  openFilters.addEventListener('click', () => {
+    filterMenu.classList.toggle('filters-menu--active');
+    if (filterMenu.classList.contains('filters-menu--active')) {
+      bodyLock.classList.add('lock');
+    } else {
+      bodyLock.classList.remove('lock');
+    }
+  });
+
+  filterMenu.onclick = function (event) {
+    let e = document.querySelector('.filters-menu__wrapper');
+    if (!e.contains(event.target)) {
+      filterMenu.classList.remove('filters-menu--active');
+      bodyLock.classList.remove('lock');
+    }
+  };
+
+  filtersBurger.addEventListener('click', () => {
+    filterMenu.classList.remove('filters-menu--active');
+    bodyLock.classList.remove('lock'); //Разрешаем скроллить
+  });
+
   let feedbackSwiper = new Swiper('.feedback-slider__inner', {
     loop: false,
     speed: 1200,
@@ -168,19 +132,77 @@ document.addEventListener('DOMContentLoaded', () => {
         },
       },
     });
-  }
 
-  let discountSwiper = new Swiper('.discounts__container', {
-    slidesperview: 1,
-    spaceBetween: 30,
-    loop: false,
-    pagination: {
-      el: '.restaurants-card__pagination',
-      clickable: true,
-      keyboard: true,
-      renderBullet: (index, className) => {
-        return `<span class="${className} restaurants-card__bullet"></span>`;
+    let discountSwiper = new Swiper('.discounts__container', {
+      slidesperview: 1,
+      spaceBetween: 30,
+      loop: false,
+      pagination: {
+        el: '.restaurants-card__pagination',
+        clickable: true,
+        keyboard: true,
+        renderBullet: (index, className) => {
+          return `<span class="${className} restaurants-card__bullet"></span>`;
+        },
       },
-    },
+    });
+  }
+});
+
+$('.select-style').styler();
+
+let $range = $('.product-price__input'),
+  $inputFrom = $('.product-price__from'),
+  $inputTo = $('.product-price__to'),
+  instance,
+  min = 60,
+  max = 1100,
+  from = 100,
+  to = 1000;
+
+$range.ionRangeSlider({
+  type: 'double',
+  min: min,
+  max: max,
+  onStart: updateInputs,
+  onChange: updateInputs,
+});
+
+instance = $range.data('ionRangeSlider');
+
+function updateInputs(data) {
+  from = data.from;
+  to = data.to;
+  $inputFrom.prop('value', from);
+  $inputTo.prop('value', to);
+}
+
+$inputFrom.on('change', function () {
+  let val = $(this).prop('value');
+  if (val < min) {
+    val = min;
+  } else if (val > to) {
+    val = to;
+  }
+  instance.update({
+    from: val,
+  });
+  instance1.update({
+    from: val,
+  });
+});
+
+$inputTo.on('change', function () {
+  let val = $(this).prop('value');
+  if (val < from) {
+    val = from;
+  } else if (val > max) {
+    val = max;
+  }
+  instance.update({
+    to: val,
+  });
+  instance1.update({
+    to: val,
   });
 });

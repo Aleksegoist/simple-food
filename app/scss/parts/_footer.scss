@@ -40,8 +40,9 @@
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-auto-flow: column;
-    gap: 20px 90px;
-    margin-right: 151px;
+    gap: 0px 90px;
+    margin-right: 150px;
+    align-items: flex-start;
 
     @include md($desktop) {
       gap: 20px 40px;

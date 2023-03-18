@@ -431,11 +431,30 @@ body {
   background-size: 18px 18px;
 }
 
+.open-filters {
+  display: none;
+  background-image: url('../icons/filters-open.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 47px;
+  height: 47px;
+  margin-right: 10px;
+  @include md($tablet-2) {
+    display: block;
+  }
+}
+
 .breadcrumbs {
   background-color: rgba(255, 122, 80, 0.1);
   padding: 24px 0;
   margin-bottom: 60px;
-  padding-top: 192px;
+  padding-top: 183px;
+
+  @include md($phone) {
+    padding-top: 97px;
+    margin-bottom: 40px;
+  }
 
   &__list {
     display: flex;

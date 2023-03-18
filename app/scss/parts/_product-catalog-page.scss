@@ -19,6 +19,10 @@
       flex-direction: column;
       margin-bottom: 30px;
     }
+
+    @include md($phone) {
+      align-items: start;
+    }
   }
 
   &__inner {
@@ -32,6 +36,10 @@
 
     @include md($tablet-2) {
       justify-content: center;
+    }
+
+    @include md($phone) {
+      padding-right: 31px;
     }
   }
 
@@ -55,6 +63,12 @@
 
   &__selects {
     display: flex;
+  }
+
+  &__footer {
+    @include md($phone) {
+      padding-left: 15px;
+    }
   }
 }
 
@@ -161,6 +175,7 @@
   }
 
   &__link {
+    font-size: 18px;
     letter-spacing: 0.03em;
     transition: all 0.3s;
 
@@ -194,6 +209,7 @@
   }
 
   &__item {
+    font-size: 18px;
     display: flex;
     position: relative;
 
@@ -242,7 +258,7 @@
   &__list {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
   }
 
   &__item {
@@ -255,7 +271,7 @@
     line-height: 1;
 
     &:not(:last-child) {
-      margin-right: 20px;
+      margin-right: 10px;
     }
   }
 
@@ -321,7 +337,7 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+    grid-gap: 14px;
     margin-bottom: 60px;
     text-align: center;
 
@@ -445,9 +461,11 @@
   }
 
   &__title {
+    text-align: start;
     margin-bottom: 60px;
 
     @include md($phone) {
+      text-align: center;
       margin-bottom: 40px;
     }
   }
@@ -485,6 +503,11 @@
       height: 392px;
       border-radius: 10px;
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    @include md($phone) {
+      padding-right: 30px;
+      margin-bottom: 15px;
     }
   }
 }
