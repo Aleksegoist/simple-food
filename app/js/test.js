@@ -1,47 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('.header');
-  window.onscroll = () => {
-    if (window.pageYOffset > 100) {
-      header.classList.add('sticky');
-    } else {
-      header.classList.remove('sticky');
-    }
-  };
-
-  const filterBtns = document.querySelectorAll('.categories-nav__btn');
-  const grid = document.querySelector('.categories-list');
-
-  filterBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      // remove active class from all buttons
-      filterBtns.forEach((filterBtn) => {
-        filterBtn.classList.remove('active');
-      });
-      // add active class to clicked button
-      btn.classList.add('active');
-
-      // get the filter value from the clicked button
-      const filterValue = btn.getAttribute('data-filter');
-
-      // filter the grid items based on the filter value
-      for (const item of grid.children) {
-        if (filterValue === 'all') {
-          // item.style.display = "block";
-          item.classList.remove('hide');
-          item.classList.add('show');
-        } else if (item.classList.contains(filterValue)) {
-          // item.style.display = "block";
-          item.classList.remove('hide');
-          item.classList.add('show');
-        } else {
-          // item.style.display = "none";
-          item.classList.remove('show');
-          item.classList.add('hide');
-        }
+  $(document).ready(function () {
+    var cur_width = $(window).width();
+    $(window).resize(function () {
+      if ($(window).width() <= 768 && cur_width > 768) {
+        //reload
+        location.reload();
+      } else if ($(window).width() > 768 && cur_width <= 768) {
+        //reload
+        location.reload();
       }
     });
   });
 
+  //Mobile Menu
   const burger = document.querySelector('.burger'); //наша кнопка
   const mobileBurger = document.querySelector('.mobile-burger'); //наша кнопка
   const filtersBurger = document.querySelector('.filters-burger'); //наша кнопка
@@ -99,54 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
     filterMenu.classList.remove('filters-menu--active');
     bodyLock.classList.remove('lock'); //Разрешаем скроллить
   });
-
-  let feedbackSwiper = new Swiper('.feedback-slider__inner', {
-    loop: false,
-    speed: 1200,
-    spaceBetween: 30,
-    navigation: {
-      nextEl: '.reviews-slider__next',
-      prevEl: '.reviews-slider__prev',
-    },
-    pagination: {
-      el: '.reviews-slider__pagination',
-      clickable: true,
-      keyboard: true,
-      renderBullet: (index, className) => {
-        return `<span class="${className} reviews-slider__bullet"></span>`;
-      },
-    },
-  });
-
-  if (window.matchMedia('(max-width: 768px)').matches) {
-    let restaurantsSwiper = new Swiper('.best-restaurants__container', {
-      slidesPerview: 1,
-      spaceBetween: 30,
-      loop: false,
-      pagination: {
-        el: '.restaurants-card__pagination',
-        clickable: true,
-        keyboard: true,
-        renderBullet: (index, className) => {
-          return `<span class="${className} restaurants-card__bullet"></span>`;
-        },
-      },
-    });
-
-    let discountSwiper = new Swiper('.discounts__container', {
-      slidesperview: 1,
-      spaceBetween: 30,
-      loop: false,
-      pagination: {
-        el: '.restaurants-card__pagination',
-        clickable: true,
-        keyboard: true,
-        renderBullet: (index, className) => {
-          return `<span class="${className} restaurants-card__bullet"></span>`;
-        },
-      },
-    });
-  }
 });
 
 $(function () {
@@ -179,6 +102,15 @@ $(function () {
       .addClass('feedback-form__label--active');
   });
 
+  $('.product-tabs__link').on('click', function (e) {
+    e.preventDefault();
+    $('.product-tabs__link').removeClass('product-tabs__link--active');
+    $(this).addClass('product-tabs__link--active');
+
+    $('.product-tabs__item').removeClass('product-tabs__item--active');
+    $($(this).attr('href')).addClass('product-tabs__item--active');
+  });
+
   if (window.matchMedia('(min-width: 768px)').matches) {
     $('.about-slider__link').magnificPopup({
       type: 'inline',
@@ -202,6 +134,7 @@ $(function () {
           });
         },
         close: function () {
+          // Will fire when popup is closed
           $('body').removeClass('lock');
         },
       },
@@ -289,4 +222,105 @@ $(function () {
   });
 
   $('.select-style, .about-form__input').styler();
+
+  $('.user-nav__search').on('click', function () {
+    $('.user-nav__field').toggleClass('user-nav__field--active');
+    $('.user-nav__btn').toggleClass('user-nav__btn--active');
+    $('.user-nav__list').toggleClass('user-nav__list--active');
+    $('.user-nav__item').toggleClass('user-nav__item--active');
+  });
+
+  let viewmore = new Swiper('.view-more__container', {
+    slidesPerView: 2,
+    slidesPerGroup: 2,
+
+    loop: false,
+    speed: 1200,
+    spaceBetween: 5,
+    pagination: {
+      el: '.view-more__pagination ',
+      clickable: true,
+      keyboard: true,
+      renderBullet: (index, className) => {
+        return `<span class="${className} restaurants-card__bullet"></span>`;
+      },
+    },
+    breakpoints: {
+      768: {
+        width: 230,
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: '.view-more__next',
+          prevEl: '.view-more__prev',
+        },
+        pagination: false,
+      },
+    },
+  });
+
+  let reviewSwiper = new Swiper('.reviews-slider__container', {
+    loop: false,
+    speed: 1200,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.reviews-slider__next',
+      prevEl: '.reviews-slider__prev',
+    },
+    pagination: {
+      el: '.reviews-slider__pagination',
+      clickable: true,
+      keyboard: true,
+      renderBullet: (index, className) => {
+        return `<span class="${className} reviews-slider__bullet"></span>`;
+      },
+    },
+  });
+
+  if (window.matchMedia('(min-width: 768px)').matches) {
+    let aboutSwiper = new Swiper('.about-slider', {
+      slidesperview: 1,
+      spaceBetween: 30,
+      loop: false,
+      navigation: {
+        nextEl: '.about-slider__next',
+        prevEl: '.about-slider__prev',
+      },
+    });
+  }
+
+  if (window.matchMedia('(max-width: 768px)').matches) {
+    let restauranstSwiper = new Swiper('.best-restaurants__container', {
+      slidesperview: 1,
+      spaceBetween: 30,
+      loop: false,
+      pagination: {
+        el: '.restaurants-card__pagination',
+        clickable: true,
+        keyboard: true,
+        renderBullet: (index, className) => {
+          return `<span class="${className} restaurants-card__bullet"></span>`;
+        },
+      },
+    });
+    let discountSwiper = new Swiper('.discounts__container', {
+      slidesperview: 1,
+      spaceBetween: 30,
+      loop: false,
+      pagination: {
+        el: '.restaurants-card__pagination',
+        clickable: true,
+        keyboard: true,
+        renderBullet: (index, className) => {
+          return `<span class="${className} restaurants-card__bullet"></span>`;
+        },
+      },
+    });
+  }
+
+  let containerEl = document.querySelector('.popular-categories__products');
+  let mixer;
+
+  if (containerEl) mixer = mixitup(containerEl);
 });

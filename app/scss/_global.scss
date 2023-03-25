@@ -271,6 +271,15 @@ body {
   }
 }
 
+.subtitle {
+  @include fz(24, 20);
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  color: $c-darkBlue-900;
+  margin-bottom: 30px;
+}
+
 .td-link {
   background-color: transparent;
   @include fz(20, 16);
@@ -553,4 +562,8 @@ body {
     z-index: 2;
     opacity: 0;
   }
+}
+
+.star {
+  padding: 0;
 }
