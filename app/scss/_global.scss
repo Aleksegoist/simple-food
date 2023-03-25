@@ -476,6 +476,12 @@ body {
     letter-spacing: 0.03em;
     color: $c-dark-50;
 
+    &--hide {
+      @include md($phone) {
+        display: none;
+      }
+    }
+
     &:not(:last-child) {
       padding-right: 16px;
       position: relative;

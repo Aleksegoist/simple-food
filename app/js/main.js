@@ -99,55 +99,115 @@ document.addEventListener('DOMContentLoaded', () => {
     filterMenu.classList.remove('filters-menu--active');
     bodyLock.classList.remove('lock'); //Разрешаем скроллить
   });
+});
 
-  let feedbackSwiper = new Swiper('.feedback-slider__inner', {
-    loop: false,
-    speed: 1200,
-    spaceBetween: 30,
-    navigation: {
-      nextEl: '.reviews-slider__next',
-      prevEl: '.reviews-slider__prev',
+let viewmore = new Swiper('.view-more__container', {
+  slidesPerView: 2,
+  slidesPerGroup: 2,
+
+  loop: false,
+  speed: 1200,
+  spaceBetween: 5,
+  pagination: {
+    el: '.view-more__pagination ',
+    clickable: true,
+    keyboard: true,
+    renderBullet: (index, className) => {
+      return `<span class="${className} restaurants-card__bullet"></span>`;
     },
+  },
+  breakpoints: {
+    768: {
+      width: 230,
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 30,
+      navigation: {
+        nextEl: '.view-more__next',
+        prevEl: '.view-more__prev',
+      },
+      pagination: false,
+    },
+  },
+});
+
+let reviewSwiper = new Swiper('.reviews-slider__container', {
+  loop: false,
+  speed: 1200,
+  spaceBetween: 30,
+  navigation: {
+    nextEl: '.reviews-slider__next',
+    prevEl: '.reviews-slider__prev',
+  },
+  pagination: {
+    el: '.reviews-slider__pagination',
+    clickable: true,
+    keyboard: true,
+    renderBullet: (index, className) => {
+      return `<span class="${className} reviews-slider__bullet"></span>`;
+    },
+  },
+});
+
+if (window.matchMedia('(min-width: 768px)').matches) {
+  let aboutSwiper = new Swiper('.about-slider', {
+    slidesperview: 1,
+    spaceBetween: 30,
+    loop: false,
+    navigation: {
+      nextEl: '.about-slider__next',
+      prevEl: '.about-slider__prev',
+    },
+  });
+}
+
+let feedbackSwiper = new Swiper('.feedback-slider__inner', {
+  loop: false,
+  speed: 1200,
+  spaceBetween: 30,
+  navigation: {
+    nextEl: '.reviews-slider__next',
+    prevEl: '.reviews-slider__prev',
+  },
+  pagination: {
+    el: '.reviews-slider__pagination',
+    clickable: true,
+    keyboard: true,
+    renderBullet: (index, className) => {
+      return `<span class="${className} reviews-slider__bullet"></span>`;
+    },
+  },
+});
+
+if (window.matchMedia('(max-width: 768px)').matches) {
+  let restaurantsSwiper = new Swiper('.best-restaurants__container', {
+    slidesPerview: 1,
+    spaceBetween: 30,
+    loop: false,
     pagination: {
-      el: '.reviews-slider__pagination',
+      el: '.restaurants-card__pagination',
       clickable: true,
       keyboard: true,
       renderBullet: (index, className) => {
-        return `<span class="${className} reviews-slider__bullet"></span>`;
+        return `<span class="${className} restaurants-card__bullet"></span>`;
       },
     },
   });
 
-  if (window.matchMedia('(max-width: 768px)').matches) {
-    let restaurantsSwiper = new Swiper('.best-restaurants__container', {
-      slidesPerview: 1,
-      spaceBetween: 30,
-      loop: false,
-      pagination: {
-        el: '.restaurants-card__pagination',
-        clickable: true,
-        keyboard: true,
-        renderBullet: (index, className) => {
-          return `<span class="${className} restaurants-card__bullet"></span>`;
-        },
+  let discountSwiper = new Swiper('.discounts__container', {
+    slidesperview: 1,
+    spaceBetween: 30,
+    loop: false,
+    pagination: {
+      el: '.restaurants-card__pagination',
+      clickable: true,
+      keyboard: true,
+      renderBullet: (index, className) => {
+        return `<span class="${className} restaurants-card__bullet"></span>`;
       },
-    });
-
-    let discountSwiper = new Swiper('.discounts__container', {
-      slidesperview: 1,
-      spaceBetween: 30,
-      loop: false,
-      pagination: {
-        el: '.restaurants-card__pagination',
-        clickable: true,
-        keyboard: true,
-        renderBullet: (index, className) => {
-          return `<span class="${className} restaurants-card__bullet"></span>`;
-        },
-      },
-    });
-  }
-});
+    },
+  });
+}
 
 $(function () {
   $('#star1').on('click', function () {
