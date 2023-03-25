@@ -179,6 +179,15 @@ $(function () {
       .addClass('feedback-form__label--active');
   });
 
+  $('.product-tabs__link').on('click', function (e) {
+    e.preventDefault();
+    $('.product-tabs__link').removeClass('product-tabs__link--active');
+    $(this).addClass('product-tabs__link--active');
+
+    $('.product-tabs__item').removeClass('product-tabs__item--active');
+    $($(this).attr('href')).addClass('product-tabs__item--active');
+  });
+
   if (window.matchMedia('(min-width: 768px)').matches) {
     $('.about-slider__link').magnificPopup({
       type: 'inline',

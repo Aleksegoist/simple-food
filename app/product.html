@@ -313,7 +313,7 @@
       </div>
 
       <main>
-        <section class="about-product">
+        <section class="about-product mb-120">
           <div class="container">
             <div class="about-product__content">
               <div class="about-slider swiper">
@@ -436,6 +436,248 @@
                   >
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div class="product-tabs">
+            <div class="product-tabs__container">
+              <ul class="product-tabs__top">
+                <li class="product-tabs__name">
+                  <a
+                    class="product-tabs__link product-tabs__link--active"
+                    href="#tab-1"
+                    >Опис</a
+                  >
+                </li>
+                <li class="product-tabs__name">
+                  <a class="product-tabs__link" href="#tab-2">Характеристики</a>
+                </li>
+                <li class="product-tabs__name">
+                  <a class="product-tabs__link" href="#tab-3">Відгуки (2)</a>
+                </li>
+              </ul>
+
+              <ul class="product-tabs__content">
+                <li
+                  class="product-tabs__item product-tabs__item--active"
+                  id="tab1">
+                  <div class="product-tabs__description">
+                    <p>
+                      Рубаний біфштекс із натуральної яловичини на
+                      карамелізованій булочці, зі скибочкою сиру "Чеддер",
+                      кетчупом, гірчицею, цибулею та маринованими огірочками.
+                    </p>
+                    <p>
+                      Алергени: глютен, молоко, гірчиця. Може містити сою, яйце,
+                      сліди кунжуту
+                    </p>
+                    <p>
+                      Зовнішній вигляд товару може відрізнятися від зображень,
+                      представлених на сайті.
+                    </p>
+                  </div>
+                </li>
+                <li class="product-tabs__item" id="tab-2">
+                  <div class="product-tabs__characteristics">
+                    <p>
+                      Діаметр:
+                      <span>20 см</span>
+                    </p>
+                    <p>
+                      Вага:
+                      <span>300 гр</span>
+                    </p>
+                    <p>
+                      Калорійність (на 100г):
+                      <span>295 ккал</span>
+                    </p>
+                    <p>
+                      Термін зберігання:
+                      <span>до 3 діб</span>
+                    </p>
+                  </div>
+                </li>
+                <li class="product-tabs__item" id="tab-3">
+                  <div class="product-tabs__reviews customer-opinions">
+                    <h3 class="customer-opinions__title subtitle">
+                      Думки наших клієнтів
+                    </h3>
+                    <ul class="customer-opinions__list">
+                      <li class="customer-opinions__item">
+                        <div class="customer-opinions__top">
+                          <div class="customer-opinions__inner">
+                            <img
+                              class="customer-opinions__author-img"
+                              src="images/review-photo.jpg"
+                              alt="Фото автора відгуку"
+                              width="70"
+                              height="70" />
+                            <div class="customer-opinions__box">
+                              <cite class="customer-opinions__name"
+                                >Андрій</cite
+                              >
+                              <time
+                                class="customer-opinions__time"
+                                datatime="2021-06-10"
+                                >10.06.2021</time
+                              >
+                            </div>
+                          </div>
+                          <div
+                            class="customer-opinions__star star"
+                            data-rateyo-rating="5"></div>
+                        </div>
+                        <blockquote class="customer-opinions__text">
+                          Доставили швидко. Товар свіжий та дуже смачний, буду
+                          ще обов’язково куштувати!
+                        </blockquote>
+                      </li>
+                      <li class="customer-opinions__item">
+                        <div class="customer-opinions__top">
+                          <div class="customer-opinions__inner">
+                            <img
+                              class="customer-opinions__author-img"
+                              src="images/review-photo.jpg"
+                              alt="Фото автора відгуку"
+                              width="70"
+                              height="70" />
+                            <div class="customer-opinions__box">
+                              <cite class="customer-opinions__name"
+                                >Катерина Біла</cite
+                              >
+                              <time
+                                class="customer-opinions__time"
+                                datatime="2021-06-07"
+                                >7.06.2021</time
+                              >
+                            </div>
+                          </div>
+                          <div
+                            class="customer-opinions__star star"
+                            data-rateyo-rating="4"></div>
+                        </div>
+                        <blockquote class="customer-opinions__text">
+                          Цей бургер непоганий на смак, особливо, коли немає
+                          можливості або часу щось готувати. Це чудовий варіант,
+                          щоб перекусити находу, але, щоб себе побалувати, краще
+                          замовлю піцу
+                        </blockquote>
+                      </li>
+                    </ul>
+                  </div>
+                  <form class="feedback-form">
+                    <h3 class="feedback-form__title subtitle">
+                      Залишити відгук
+                    </h3>
+                    <div class="feedback-form__rating">
+                      <span class="feedback-form__name">Ваша оцінка *</span>
+
+                      <ul class="feedback-form__list">
+                        <li class="feedback-form__item">
+                          <input
+                            class="feedback-form__input input"
+                            type="radio"
+                            name="star"
+                            id="star1"
+                            required />
+                          <label class="feedback-form__label" for="star1">
+                          </label>
+                        </li>
+                        <li class="feedback-form__item">
+                          <input
+                            class="feedback-form__input input"
+                            type="radio"
+                            name="star"
+                            id="star2"
+                            required />
+                          <label class="feedback-form__label" for="star2">
+                          </label>
+                        </li>
+                        <li class="feedback-form__item">
+                          <input
+                            class="feedback-form__input input"
+                            type="radio"
+                            name="star"
+                            id="star3"
+                            required />
+                          <label class="feedback-form__label" for="star3">
+                          </label>
+                        </li>
+                        <li class="feedback-form__item">
+                          <input
+                            class="feedback-form__input input"
+                            type="radio"
+                            name="star"
+                            id="star4"
+                            required />
+                          <label class="feedback-form__label" for="star4">
+                          </label>
+                        </li>
+                        <li class="feedback-form__item">
+                          <input
+                            class="feedback-form__input input"
+                            type="radio"
+                            name="star"
+                            id="star5"
+                            required />
+                          <label class="feedback-form__label" for="star5">
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="feedback-form__fields form-reviews">
+                      <div class="form-reviews__textarea">
+                        <label class="form-reviews__label" for="textarea"
+                          >Ваш відгук *</label
+                        >
+                        <textarea
+                          class="form-reviews__field form-reviews__field--textarea"
+                          name="message"
+                          id="textarea"
+                          placeholder="Введіть текст відгука"
+                          required></textarea>
+                      </div>
+                      <div class="form-reviews__inner">
+                        <div class="form-reviews__row">
+                          <label class="form-reviews__label" for="name"
+                            >Имя</label
+                          >
+                          <input
+                            class="form-reviews__field"
+                            type="text"
+                            id="name"
+                            placeholder="Введите ваше имя" />
+                        </div>
+                        <div class="form-reviews__row">
+                          <label class="form-reviews__label" for="email"
+                            >Email *</label
+                          >
+                          <input
+                            class="form-reviews__field"
+                            type="email"
+                            id="email"
+                            placeholder="youremail@mail.com"
+                            required />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="feedback-form__save">
+                      <input
+                        class="feedback-form__input input"
+                        type="checkbox"
+                        name="save-email-checkbox"
+                        id="save" />
+                      <label class="feedback-form__checkbox checkbox" for="save"
+                        >Зберегти моє ім’я, email та адресу сайта в цьому
+                        браузері для наступних моїх коментарів.</label
+                      >
+                    </div>
+                    <button class="feedback-form__btn btn" type="submit">
+                      Залишити відгук
+                    </button>
+                  </form>
+                </li>
+              </ul>
             </div>
           </div>
         </section>
